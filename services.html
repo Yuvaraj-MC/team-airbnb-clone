@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js" defer></script>
+</head>
+
+<body class="bg-gray-100">
+    <!-- NAVBAR -->
+    <nav
+        class="bg-white border-b border-gray-200 px-10 py-8 flex items-center justify-between shadow-lg  sticky top-0 z-50">
+        <!-- <nav class="bg-white border-b border-gray-200 px-10 py-8 flex items-center justify-between shadow-lg sticky top-0 z-50"></nav> -->
+        <!-- LEFT: Logo -->
+        <div class="flex items-center gap-1 text-[#FF385C]">
+            <svg width="28" height="28" viewBox="0 0 30 32" fill="#FF385C">
+                <path d="M15 0C9 8 3 13 3 19a12 12 0 0024 0C27 13 21 8 15 0z" />
+            </svg>
+            <span class="text-xl font-bold">airbnb</span>
+        </div>
+
+        <!-- CENTER: Nav Tabs -->
+        <div class="flex items-center gap-2  ">
+
+            <!-- Homes Tab -->
+           <button onclick="setActive(this); location.href='index.html'"
+                class="nav-tab active-tab  relative flex items-center gap-2 px-4 py-2 text-sm font-semibold text-gray-600  hover:bg-gray-100 rounded-lg border-transparent">
+                <span
+                    class="absolute -top-4 left-10 bg-blue-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full">NEW</span>
+                <span class="text-2xl">🏠</span> Home
+            </button>
+
+            <!-- Experiences Tab -->
+            <!-- <button onclick="setActive(this)"
+                class="nav-tab relative flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-600 hover:bg-gray-100 rounded-lg  border-transparent">
+                <span
+                    class="absolute -top-4 left-10 bg-blue-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full">NEW</span>
+                <span class="text-2xl">🎈</span> Experiences
+            </button> -->
+
+            <a href="experience.html"
+                class="nav-tab relative flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-600 hover:bg-gray-100 rounded-lg border-transparent">
+                <span
+                    class="absolute -top-4 left-10 bg-blue-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full">NEW</span>
+                <span class="text-2xl">🎈</span> Experiences
+            </a>
+
+            <!-- Services Tab -->
+            <button onclick="setActive(this); location.href='services.html'"
+                class="nav-tab relative flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-600 hover:bg-gray-100 rounded-lg  border-transparent">
+                <span
+                    class="absolute -top-4 left-10 bg-blue-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full">NEW</span>
+                <span class="text-2xl">🛎️</span> Services
+            </button>
+
+             <!-- contact Tab -->
+            <button onclick="setActive(this); location.href='contact.html'"
+                class="nav-tab relative flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-600 hover:bg-gray-100 rounded-lg  border-transparent">
+                <span
+                    class="absolute -top-4 left-10 bg-blue-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full">NEW</span>
+                <span class="text-2xl">📞</span> Contact
+            </button>
+        </div>
+
+        <!-- RIGHT: Actions -->
+        <div class="flex items-center gap-1">
+            <a href="#" class="text-sm font-semibold text-gray-700 px-4 py-2 rounded-full hover:bg-gray-100">
+                Become a host
+            </a>
+            <button class="text-xl p-2 rounded-full hover:bg-gray-100">🌐</button>
+            <button class="text-xl p-2 rounded-full hover:bg-gray-100">☰</button>
+        </div>
+    </nav>
+
+</body>
+
+</html>

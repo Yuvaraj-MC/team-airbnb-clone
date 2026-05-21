@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Airbnb Navbar</title>
     <script src="https://cdn.tailwindcss.com"></script>
-
     <script src="script.js" defer></script>
 </head>
 
@@ -27,7 +26,7 @@
         <div class="flex items-center gap-2  ">
 
             <!-- Homes Tab -->
-            <button onclick="setActive(this)"
+           <button onclick="setActive(this); location.href='index.html'"
                 class="nav-tab active-tab  relative flex items-center gap-2 px-4 py-2 text-sm font-semibold text-gray-600  hover:bg-gray-100 rounded-lg border-transparent">
                 <span
                     class="absolute -top-4 left-10 bg-blue-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full">NEW</span>
@@ -35,21 +34,36 @@
             </button>
 
             <!-- Experiences Tab -->
-            <button onclick="setActive(this)"
+            <!-- <button onclick="setActive(this)"
                 class="nav-tab relative flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-600 hover:bg-gray-100 rounded-lg  border-transparent">
                 <span
                     class="absolute -top-4 left-10 bg-blue-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full">NEW</span>
                 <span class="text-2xl">🎈</span> Experiences
-            </button>
+            </button> -->
+
+            <a href="experience.html"
+                class="nav-tab relative flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-600 hover:bg-gray-100 rounded-lg border-transparent">
+                <span
+                    class="absolute -top-4 left-10 bg-blue-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full">NEW</span>
+                <span class="text-2xl">🎈</span> Experiences
+            </a>
 
             <!-- Services Tab -->
-            <button onclick="setActive(this)"
+            <button onclick="setActive(this); location.href='services.html'"
                 class="nav-tab relative flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-600 hover:bg-gray-100 rounded-lg  border-transparent">
                 <span
                     class="absolute -top-4 left-10 bg-blue-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full">NEW</span>
                 <span class="text-2xl">🛎️</span> Services
             </button>
 
+            
+             <!-- contact Tab -->
+            <button onclick="setActive(this); location.href='contact.html'"
+                class="nav-tab relative flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-600 hover:bg-gray-100 rounded-lg  border-transparent">
+                <span
+                    class="absolute -top-4 left-10 bg-blue-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full">NEW</span>
+                <span class="text-2xl">📞</span> Contact
+            </button>
         </div>
 
         <!-- RIGHT: Actions -->

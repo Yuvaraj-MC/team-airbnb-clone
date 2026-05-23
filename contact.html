@@ -56,7 +56,7 @@
                 <span class="text-2xl">🛎️</span> Services
             </button>
 
-             <!-- contact Tab -->
+            <!-- contact Tab -->
             <button onclick="setActive(this); location.href='contact.html'"
                 class="nav-tab relative flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-600 hover:bg-gray-100 rounded-lg  border-transparent">
                 <span
@@ -74,6 +74,233 @@
             <button class="text-xl p-2 rounded-full hover:bg-gray-100">☰</button>
         </div>
     </nav>
+    <!--contact content-->
+    <main class="max-w-4xl mx-auto px-6 py-16 font-sans">
+        <!-- ROLE SELECTION -->
+        <div id="step-role" class="">
+            <h1 class="text-4xl mb-2 font-bold text-red-500">Contact Us</h1>
+            <p class="font-semibold">We personalize your support channels based on your active account status.</p>
+            <P class="font-semibold mt-10 mb-10">We'll start with a few questions and get you to the right place.</P>
+        </div>
+        <div class="flex gap-4">
+            <div
+                class=" cursor-pointer border-solid border-2 border-gray-300 p-2 rounded-md transform hover:scale-105 duration-500 hover:shadow-lg">
+                <svg class="w-10 h-10" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+                    <path fill="rgb(4, 5, 5)"
+                        d="M264 112L376 112C380.4 112 384 115.6 384 120L384 160L256 160L256 120C256 115.6 259.6 112 264 112zM208 120L208 160L128 160C92.7 160 64 188.7 64 224L64 320L576 320L576 224C576 188.7 547.3 160 512 160L432 160L432 120C432 89.1 406.9 64 376 64L264 64C233.1 64 208 89.1 208 120zM576 368L384 368L384 384C384 401.7 369.7 416 352 416L288 416C270.3 416 256 401.7 256 384L256 368L64 368L64 480C64 515.3 92.7 544 128 544L512 544C547.3 544 576 515.3 576 480L576 368z" />
+                </svg>
+                <h2>I'm a Guest</h2>
+                <p>Help with finding stays, current trips, refunds, or safety concerns.</p>
+            </div>
+            <div
+                class="cursor-pointer border-solid border-2 border-gray-300 p-2 rounded-md transform hover:scale-105 duration-500 hover:shadow-lg">
+                <svg class="w-10 h-10" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+                    <path fill="rgb(4, 5, 5)"
+                        d="M341.8 72.6C329.5 61.2 310.5 61.2 298.3 72.6L74.3 280.6C64.7 289.6 61.5 303.5 66.3 315.7C71.1 327.9 82.8 336 96 336L112 336L112 512C112 547.3 140.7 576 176 576L464 576C499.3 576 528 547.3 528 512L528 336L544 336C557.2 336 569 327.9 573.8 315.7C578.6 303.5 575.4 289.5 565.8 280.6L341.8 72.6zM264 320C264 289.1 289.1 264 320 264C350.9 264 376 289.1 376 320C376 350.9 350.9 376 320 376C289.1 376 264 350.9 264 320zM208 496C208 451.8 243.8 416 288 416L352 416C396.2 416 432 451.8 432 496C432 504.8 424.8 512 416 512L224 512C215.2 512 208 504.8 208 496z" />
+                </svg>
+                <h2>I'm a Host</h2>
+                <p>Help with property listings, calendar syncing, settings, or your payouts.</p>
+            </div>
+        </div>
+
+        <div class="w-full border-solid border-b-2 border-gray-300 mt-10"></div>
+        
+                <!-- TOPIC CARDS -->
+        <section class="">
+            <h2 class="font-bold mt-5 mb-5 text-2xl">What can we help you with?</h2>
+            <div class="grid grid-cols-2 gap-4 ">
+                <div
+                    class="flex cursor-pointer p-2 border-solid border-2 border-gray-300 gap-2 rounded-md transform hover:scale-105 duration-500 hover:shadow-lg">
+                    <div class="mt-5 text-2xl">🏠</div>
+                    <div>
+                        <p>Reservations & trips</p>
+                        <p>Cancel a booking, check-in issues, or change your dates</p>
+                    </div>
+                </div>
+
+                <div
+                    class="flex cursor-pointer p-2 border-solid border-2 border-gray-300 gap-2 rounded-md transform hover:scale-105 duration-500 hover:shadow-lg">
+                    <div class="mt-5 text-2xl">👤</div>
+                    <div>
+                        <p>Account</p>
+                        <p>Log-in issues, profile settings, or identity verification</p>
+                    </div>
+                </div>
+
+                <div
+                    class="flex cursor-pointer p-2 border-solid border-2 border-gray-300 gap-2 rounded-md transform hover:scale-105 duration-500 hover:shadow-lg">
+                    <div class="mt-5 text-2xl">☂️</div>
+                    <div>
+                        <p>AirCover</p>
+                        <p>File a claim for rebooking, refund, or damage protection</p>
+                    </div>
+                </div>
+
+                <div
+                    class="flex cursor-pointer p-2 border-solid border-2 border-gray-300 gap-2 rounded-md transform hover:scale-105 duration-500 hover:shadow-lg">
+                    <div class="mt-5 text-2xl" class="mt-5 text-2xl">💳</div>
+                    <div>
+                        <p>Payments & refunds</p>
+                        <p>Billing questions, refund status, or payment methods</p>
+                    </div>
+                </div>
+
+                <div
+                    class="flex cursor-pointer p-2 border-solid border-2 border-gray-300 gap-2 rounded-md transform hover:scale-105 duration-500 hover:shadow-lg">
+                    <div class="mt-5 text-2xl">🛡️</div>
+                    <div>
+                        <p>Safety concern</p>
+                        <p>Report an emergency, suspicious activity, or policy violation</p>
+                    </div>
+                </div>
+
+                <div
+                    class="flex cursor-pointer p-2 border-solid border-2 border-gray-300 gap-2 rounded-md transform hover:scale-105 duration-500 hover:shadow-lg">
+                    <div class="mt-5 text-2xl">💬</div>
+                    <div>
+                        <p>Something else</p>
+                        <p>Accessibility, anti-discrimination, feedback, and more</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <div class="w-full border-solid border-b-2 border-gray-300 mt-10"></div>
+
+        <!-- CONTACT CHANNELS -->
+
+        <section class="mt-10">
+            <div>
+                <h2 class="font-bold text-2xl mb-1">Ways to get in touch</h2>
+                <p>Choose the option that works best for you.</p>
+            </div>
+            <div class="border-solid border-2 border-gray-200 rounded-md mt-5">
+                <div
+                    class="flex gap-5 border-b border-b-1 border-gray-200 p-5 transform hover:bg-gray-200 cursor-pointer duration-300 ">
+                    <div class="text-2xl p-2 bg-gray-200 rounded-full">✉️</div>
+                    <div>
+                        <h3 class="font-semibold">Send a message</h3>
+                        <p>Fill out the form below and we'll reply by email.</p>
+                    </div>
+                </div>
+                <div
+                    class="flex gap-5 border-b border-b-1 border-gray-200 p-5 transform hover:bg-gray-200 cursor-pointer duration-300 ">
+                    <div class="text-2xl p-2 bg-gray-200 rounded-full">💭</div>
+                    <div>
+                        <h3 class="font-semibold">Live chat</h3>
+                        <p>Chat with us in real-time.</p>
+                    </div>
+                </div>
+                <div class="flex p-5 gap-5 transform hover:bg-gray-200 cursor-pointer duration-300 ">
+                    <div class="text-2xl p-2 bg-gray-200 rounded-full">📞</div>
+                    <div>
+                        <h3 class="font-semibold">Call us</h3>
+                        <p>Call us -- available 24/7 in 11+ languages.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="w-full border-solid border-b-2 border-gray-300 mt-10"></div>
+        <!-- CONTACT FORM -->
+        <section class="border-soild border-2 border-gray-300 mt-5 rounded-xl p-2">
+            <div class="flex items-center gap-3 mt-10">
+                <svg class="w-7 h-7 text-rose-500" viewBox="0 0 32 32" fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M16 2C14.8 2 13.6 2.6 12.8 3.6L4.2 16.4C2.8 18.4 2.4 21 3.4 23.2c1 2.4 3.4 4 6 4 1.6 0 3.2-.6 4.4-1.6.4.4.8.8 1.2 1 .6.4 1.2.6 2 .6.6 0 1.4-.2 2-.6.4-.2.8-.6 1.2-1 1.2 1 2.8 1.6 4.4 1.6 2.6 0 5-1.6 6-4 1-2.2.6-4.8-.8-6.8L21.2 3.6C20.4 2.6 19.2 2 18 2h-2zm0 2.5c.4 0 .8.2 1.1.6l8.6 12.8c1 1.4 1.2 3.2.4 4.8-.7 1.5-2.2 2.5-3.9 2.5-1.2 0-2.3-.5-3.1-1.3l-.7-.7-.7.7c-.4.4-.9.6-1.4.6s-1-.2-1.4-.6l-.7-.7-.7.7C12.7 24.5 11.6 25 10.4 25c-1.7 0-3.2-1-3.9-2.5-.8-1.6-.6-3.4.4-4.8L14.9 4.6c.3-.4.7-.1 1.1-.1z" />
+                </svg>
+                <div>
+                    <h1 class="text-2xl font-bold">Send us a message</h1>
+                    <p>We'll get back to you as soon as possible.</p>
+                </div>
+            </div>
+            <div class="w-full border-solid border-b-2 border-gray-300 mt-10"></div>
+            <div class="grid grid-cols-2 gap-4 mt-10 mb-10">
+                <div>
+                    <lable class="font-semibold mb-2">First name</lable>
+                    <input type="text" placeholder="First name"
+                        class="w-full px-4 py-3 text-sm text-gray-900 border border-gray-300 rounded-lg outline-none transition-all duration-150 placeholder:text-gray-400 focus:border-gray-900 focus:ring-2 focus:ring-gray-900/10 hover:border-gray-400">
+                </div>
+                <div>
+                    <lable class="font-semibold">Last name</lable>
+                    <input type="text" placeholder="Last name"
+                        class="w-full px-4 py-3 text-sm text-gray-900 border border-gray-300 rounded-lg outline-none transition-all duration-150 placeholder:text-gray-400 focus:border-gray-900 focus:ring-2 focus:ring-gray-900/10 hover:border-gray-400">
+                </div>
+            </div>
+            <div>
+                <lable class="font-semibold">Email</lable>
+                <input type="email" placeholder="Email"
+                    class="w-full px-4 py-3 text-sm text-gray-900 border border-gray-300 rounded-lg outline-none transition-all duration-150 placeholder:text-gray-400 focus:border-gray-900 focus:ring-2 focus:ring-gray-900/10 hover:border-gray-400">
+            </div>
+            <div class="grid grid-cols-2 gap-4 mb-5 mt-5">
+                <div>
+                    <lable class="font-semibold">Phone <p class="opacity-25">(optional)</p>
+                    </lable>
+                    <input type="tel" placeholder="Phone number"
+                        class="w-full px-4 py-3 text-sm text-gray-900 border border-gray-300 rounded-lg outline-none transition-all duration-150 placeholder:text-gray-400 focus:border-gray-900 focus:ring-2 focus:ring-gray-900/10 hover:border-gray-400">
+                </div>
+                <div>
+                    <label class="font-semibold">Reservation code <p class="opacity-25">(optional)</p></label>
+                    <input type="text" placeholder="Reservation code"
+                        class="w-full px-4 py-3 text-sm text-gray-900 border border-gray-300 rounded-lg outline-none transition-all duration-150 placeholder:text-gray-400 focus:border-gray-900 focus:ring-2 focus:ring-gray-900/10 hover:border-gray-400">
+                </div>
+            </div>
+            <div class="mb-5">
+                <label for="tf-topic" class="block font-semibold text-gray-800">Topic</label>
+                <div class="relative">
+                    <select id="tf-topic"
+                        class="w-full appearance-none px-4 py-3 text-sm text-gray-900 border border-gray-300 rounded-lg outline-none transition-all duration-150 bg-white focus:border-gray-900 focus:ring-2 focus:ring-gray-900/10 hover:border-gray-400 cursor-pointer">
+                        <option value="">Select a topic</option>
+                        <option>Reservations &amp; trips</option>
+                        <option>Cancellations &amp; refunds</option>
+                        <option>Payments &amp; billing</option>
+                        <option>Account &amp; login</option>
+                        <option>Safety concern</option>
+                        <option>AirCover claim</option>
+                        <option>Accessibility</option>
+                        <option>Hosting</option>
+                        <option>Other</option>
+                    </select>
+                    <span class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-gray-400">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path d="M6 9l6 6 6-6" />
+                        </svg>
+                    </span>
+                </div>
+            </div>
+            <!-- Subject -->
+            <div class="mb-5">
+                <label for="tf-subject" class="block  font-semibold text-gray-800">Subject</label>
+                <input id="tf-subject" type="text" placeholder="Brief summary of your issue"
+                    class="w-full px-4 py-3 text-sm text-gray-900 border border-gray-300 rounded-lg outline-none transition-all duration-150 placeholder:text-gray-400 focus:border-gray-900 focus:ring-2 focus:ring-gray-900/10 hover:border-gray-400" />
+            </div>
+
+            <!-- Message -->
+            <div>
+                <div class="flex items-center justify-between">
+                    <label for="tf-msg" class="block  font-semibold text-gray-800">Message</label>
+                    <span class="text-xs text-gray-400" id="tf-count">0 / 2000</span>
+                </div>
+                <textarea id="tf-msg" rows="5" maxlength="2000"
+                    placeholder="Describe your issue in detail — include dates, reservation info, and anything helpful..."
+                    oninput="document.getElementById('tf-count').textContent = this.value.length + ' / 2000'"
+                    class="w-full px-4 py-3 text-sm text-gray-900 border border-gray-300 rounded-lg outline-none transition-all duration-150 placeholder:text-gray-400 resize-y focus:border-gray-900 focus:ring-2 focus:ring-gray-900/10 hover:border-gray-400 leading-relaxed"></textarea>
+            </div>
+
+            <!-- Terms note -->
+            <p class="text-xs text-gray-400 leading-relaxed">
+                By submitting this form you agree to Airbnb's
+                <a href="#" class="underline text-gray-600 hover:text-gray-900">Privacy Policy</a> and
+                <a href="#" class="underline text-gray-600 hover:text-gray-900">Terms of Service</a>.
+            </p>
+
+            </div>
+
+        </section>
+    </main>
 
 </body>
 

@@ -80,9 +80,6 @@
 
 
 
-
-
-
 //  selecting calendar
 
 // 1. Today's date track cheyyadam
@@ -101,6 +98,7 @@
     box.classList.toggle('hidden');
     renderCalendar();
   }
+
 
   // 3. Previous / Next month buttons
   function changeMonth(direction) {

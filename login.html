@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airbnb - Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="flex items-center justify-center min-h-screen bg-gray-100">
+
+    <!-- Phone / Email-->
+    <div id="step1" class="max-w-md w-full bg-white p-8 rounded-lg shadow-lg space-y-3">
+
+        <!-- Header -->
+        <div class="flex flex-col items-center space-y-4">
+            <div class="flex items-center justify-center">
+                <svg class="w-8 h-8" viewBox="0 0 32 32" fill="#FF385C">
+                    <path d="M16 2C14.8 2 13.6 2.6 12.8 3.6L4.2 16.4C2.8 18.4 2.4 21 3.4 23.2c1 2.4 3.4 4 6 4 1.6 0 3.2-.6 4.4-1.6.4.4.8.8 1.2 1 .6.4 1.2.6 2 .6.6 0 1.4-.2 2-.6.4-.2.8-.6 1.2-1 1.2 1 2.8 1.6 4.4 1.6 2.6 0 5-1.6 6-4 1-2.2.6-4.8-.8-6.8L21.2 3.6C20.4 2.6 19.2 2 18 2h-2zm0 2.5c.4 0 .8.2 1.1.6l8.6 12.8c1 1.4 1.2 3.2.4 4.8-.7 1.5-2.2 2.5-3.9 2.5-1.2 0-2.3-.5-3.1-1.3l-.7-.7-.7.7c-.4.4-.9.6-1.4.6s-1-.2-1.4-.6l-.7-.7-.7.7C12.7 24.5 11.6 25 10.4 25c-1.7 0-3.2-1-3.9-2.5-.8-1.6-.6-3.4.4-4.8L14.9 4.6c.3-.4.7-.6 1.1-.6z"/>
+                </svg>
+                <span class="ml-2 text-2xl font-bold text-gray-800">airbnb</span>
+            </div>
+            <div class="text-center">
+                <h2 class="text-2xl font-bold text-gray-800">Welcome back!</h2>
+                <p class="text-sm text-gray-500">Log in to your Airbnb account</p>
+            </div>
+        </div>
+
+        <!-- Phone / Email Tabs -->
+        <div class="flex border-t border-b border-gray-300 w-[calc(100%+4rem)] -mx-8">
+            <button id="tab-phone" onclick="setTab('phone')"
+                class="flex-1 px-4 py-3 text-sm font-semibold text-gray-900 bg-gray-100 border-r border-gray-300 transition-all">
+                Phone
+            </button>
+            <button id="tab-email" onclick="setTab('email')"
+                class="flex-1 px-4 py-3 text-sm font-medium text-gray-500 hover:text-gray-900 transition-all">
+                Email
+            </button>
+        </div>
+
+        <!-- Phone Section -->
+        <div id="phone-section">
+            <div class="p-2 border border-gray-300 rounded-lg focus-within:border-gray-900 focus-within:ring-2 focus-within:ring-gray-900/10 transition-all mb-3">
+                <label class="block text-sm font-medium text-gray-700">Country / Region</label>
+                <select class="w-full px-3 py-2 focus:outline-none bg-white">
+                    <option value="IN">India (+91)</option>
+                    <option value="US">United States (+1)</option>
+                    <option value="GB">United Kingdom (+44)</option>
+                    <option value="CA">Canada (+1)</option>
+                    <option value="AU">Australia (+61)</option>
+                </select>
+            </div>
+            <div class="p-2 border border-gray-300 rounded-lg focus-within:border-gray-900 focus-within:ring-2 focus-within:ring-gray-900/10 transition-all">
+                <label class="block text-sm font-medium text-gray-700">Phone Number</label>
+                <input id="phone-input" type="tel" placeholder="Enter your phone number"
+                    class="w-full px-3 py-2 focus:outline-none"/>
+            </div>
+        </div>
+
+        <!-- Email Section -->
+        <div id="email-section" class="hidden">
+            <div class="p-2 border border-gray-300 rounded-lg focus-within:border-gray-900 focus-within:ring-2 focus-within:ring-gray-900/10 transition-all">
+                <label class="block text-sm font-medium text-gray-700">Email</label>
+                <input id="email-input" type="email" placeholder="Enter your email address"
+                    class="w-full px-3 py-2 focus:outline-none"/>
+            </div>
+        </div>
+
+        <!-- Privacy note -->
+        <p class="text-sm text-gray-600">
+            We'll call or text you to confirm your number. Standard message and data rates apply.
+            <a href="#" class="text-blue-500 hover:underline">Privacy Policy</a>
+        </p>
+
+        <!-- Continue Button -->
+        <button onclick="goStep2()"
+            class="w-full py-3 bg-rose-500 text-white font-semibold rounded-lg hover:bg-rose-600 transition-colors active:scale-[0.99]">
+            Continue
+        </button>
+
+        <!-- Divider -->
+        <div class="flex items-center gap-3">
+            <hr class="flex-1 border-gray-200"/>
+            <span class="text-xs text-gray-400">or</span>
+            <hr class="flex-1 border-gray-200"/>
+        </div>
+
+        <!-- Social Buttons -->
+        <div class="flex flex-col gap-3">
+            <button class="w-full py-2.5 border border-gray-300 rounded-lg flex items-center justify-center gap-3 hover:bg-gray-50 transition-colors text-sm font-medium text-gray-700">
+                <svg class="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24">
+                    <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                    <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                    <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/>
+                    <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                </svg>
+                Continue with Google
+            </button>
+            <button class="w-full py-2.5 border border-gray-300 rounded-lg flex items-center justify-center gap-3 hover:bg-gray-50 transition-colors text-sm font-medium text-gray-700">
+                <svg class="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="#000">
+                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                </svg>
+                Continue with Apple
+            </button>
+            <button class="w-full py-2.5 border border-gray-300 rounded-lg flex items-center justify-center gap-3 hover:bg-gray-50 transition-colors text-sm font-medium text-gray-700">
+                <svg class="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="#1877F2">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+                Continue with Facebook
+            </button>
+        </div>
+
+        <!-- Sign Up Link -->
+        <p class="text-center text-sm text-gray-600">
+            Don't have an account?
+            <a href="#" class="text-rose-500 font-semibold hover:underline">Sign up</a>
+        </p>
+
+    </div>
+
+    <!-- Password -->
+    <div id="step2" class="hidden max-w-md w-full bg-white p-8 rounded-lg shadow-lg space-y-4">
+
+        <!-- Back button -->
+        <button onclick="goBack()"
+            class="flex items-center gap-2 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" d="M15 19l-7-7 7-7"/>
+            </svg>
+            Back
+        </button>
+
+        <!-- Logo -->
+        <div class="flex items-center justify-center gap-2">
+            <svg class="w-7 h-7" viewBox="0 0 32 32" fill="#FF385C">
+                <path d="M16 2C14.8 2 13.6 2.6 12.8 3.6L4.2 16.4C2.8 18.4 2.4 21 3.4 23.2c1 2.4 3.4 4 6 4 1.6 0 3.2-.6 4.4-1.6.4.4.8.8 1.2 1 .6.4 1.2.6 2 .6.6 0 1.4-.2 2-.6.4-.2.8-.6 1.2-1 1.2 1 2.8 1.6 4.4 1.6 2.6 0 5-1.6 6-4 1-2.2.6-4.8-.8-6.8L21.2 3.6C20.4 2.6 19.2 2 18 2h-2zm0 2.5c.4 0 .8.2 1.1.6l8.6 12.8c1 1.4 1.2 3.2.4 4.8-.7 1.5-2.2 2.5-3.9 2.5-1.2 0-2.3-.5-3.1-1.3l-.7-.7-.7.7c-.4.4-.9.6-1.4.6s-1-.2-1.4-.6l-.7-.7-.7.7C12.7 24.5 11.6 25 10.4 25c-1.7 0-3.2-1-3.9-2.5-.8-1.6-.6-3.4.4-4.8L14.9 4.6c.3-.4.7-.6 1.1-.6z"/>
+            </svg>
+            <span class="text-xl font-bold text-gray-800">airbnb</span>
+        </div>
+
+        <!-- Signing in as -->
+        <div class="bg-gray-50 rounded-lg px-4 py-3">
+            <p class="text-xs text-gray-500">Signing in as</p>
+            <p id="s2-identity" class="text-sm font-semibold text-gray-900 mt-0.5"></p>
+        </div>
+
+        <!-- Password field -->
+        <div class="p-2 border border-gray-300 rounded-lg focus-within:border-gray-900 focus-within:ring-2 focus-within:ring-gray-900/10 transition-all">
+            <label class="block text-sm font-medium text-gray-700">Password</label>
+            <div class="flex items-center gap-2">
+                <input id="pw-input" type="password" placeholder="Enter your password"
+                    class="flex-1 px-3 py-2 focus:outline-none text-sm text-gray-900 bg-white"/>
+                <button onclick="togglePw()" id="pw-toggle"
+                    class="text-xs font-semibold text-gray-500 hover:text-gray-900 transition-colors flex-shrink-0 pr-1">
+                    Show
+                </button>
+            </div>
+        </div>
+
+        <!-- Forgot password -->
+        <div class="text-right">
+            <a href="#" class="text-sm font-medium text-gray-600 underline hover:text-gray-900">Forgot password?</a>
+        </div>
+
+        <!-- Log in button -->
+        <button onclick="doLogin()"
+            class="w-full py-3 rounded-lg text-sm font-semibold text-white transition-all hover:opacity-90 active:scale-[0.99]"
+            style="background: linear-gradient(to right, #e61e4d, #e31c5f, #d70466);">
+            Log in
+        </button>
+
+    </div>
+
+    <!--- Success--->
+    <div id="step3" class="hidden max-w-md w-full bg-white p-8 rounded-lg shadow-lg text-center space-y-4">
+
+        <!-- Success icon -->
+        <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto"
+            style="background: linear-gradient(to right, #e61e4d, #d70466);">
+            <svg class="w-8 h-8" fill="none" stroke="white" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+            </svg>
+        </div>
+
+        <div>
+            <h2 class="text-2xl font-bold text-gray-900">You're logged in!</h2>
+            <p class="text-sm text-gray-500 mt-1">Welcome back. Start exploring millions of stays.</p>
+        </div>
+
+        <!-- Logged in as -->
+        <div class="bg-gray-50 rounded-lg px-4 py-3">
+            <p class="text-xs text-gray-500">Logged in as</p>
+            <p id="s3-identity" class="text-sm font-semibold text-gray-900 mt-0.5"></p>
+        </div>
+
+        <button onclick="reset()"
+            class="w-full py-3 rounded-lg text-sm font-semibold text-white transition-all hover:opacity-90 active:scale-[0.99]"
+            style="background: linear-gradient(to right, #e61e4d, #e31c5f, #d70466);">
+            Explore homes
+        </button>
+
+        <p class="text-xs text-gray-400">
+            Not you? <button onclick="reset()" class="underline text-gray-600 hover:text-gray-900">Sign in with a different account</button>
+        </p>
+
+    </div>
+
+    <script>
+        // ── track active tab ──
+        let activeTab = 'phone';
+
+        // ── Switch between Phone and Email tabs ──
+        function setTab(tab) {
+            activeTab = tab;
+
+            const phoneSection = document.getElementById('phone-section');
+            const emailSection = document.getElementById('email-section');
+            const tabPhone     = document.getElementById('tab-phone');
+            const tabEmail     = document.getElementById('tab-email');
+
+            if (tab === 'phone') {
+                // Show phone, hide email
+                phoneSection.classList.remove('hidden');
+                emailSection.classList.add('hidden');
+
+                // Style active tab
+                tabPhone.classList.add('bg-gray-100', 'font-semibold', 'text-gray-900');
+                tabPhone.classList.remove('text-gray-500', 'font-medium');
+                tabEmail.classList.remove('bg-gray-100', 'font-semibold', 'text-gray-900');
+                tabEmail.classList.add('text-gray-500', 'font-medium');
+            } else {
+                // Show email, hide phone
+                emailSection.classList.remove('hidden');
+                phoneSection.classList.add('hidden');
+
+                // Style active tab
+                tabEmail.classList.add('bg-gray-100', 'font-semibold', 'text-gray-900');
+                tabEmail.classList.remove('text-gray-500', 'font-medium');
+                tabPhone.classList.remove('bg-gray-100', 'font-semibold', 'text-gray-900');
+                tabPhone.classList.add('text-gray-500', 'font-medium');
+            }
+        }
+
+        // ── Continue button → go to password step ──
+        function goStep2() {
+            let val = '';
+
+            if (activeTab === 'phone') {
+                val = document.getElementById('phone-input').value.trim();
+                if (!val) {
+                    document.getElementById('phone-input').focus();
+                    alert('Please enter your phone number.');
+                    return;
+                }
+            } else {
+                val = document.getElementById('email-input').value.trim();
+                if (!val) {
+                    document.getElementById('email-input').focus();
+                    alert('Please enter your email address.');
+                    return;
+                }
+                if (!val.includes('@')) {
+                    document.getElementById('email-input').focus();
+                    alert('Please enter a valid email address.');
+                    return;
+                }
+            }
+
+            // Show identity in step 2
+            document.getElementById('s2-identity').textContent = val;
+
+            // Switch to step 2
+            document.getElementById('step1').classList.add('hidden');
+            document.getElementById('step2').classList.remove('hidden');
+
+            // Focus password field automatically
+            document.getElementById('pw-input').focus();
+        }
+
+        // ── Back button → go back to step 1 ──
+        function goBack() {
+            document.getElementById('step2').classList.add('hidden');
+            document.getElementById('step1').classList.remove('hidden');
+            document.getElementById('pw-input').value = '';
+            document.getElementById('pw-toggle').textContent = 'Show';
+            document.getElementById('pw-input').type = 'password';
+        }
+
+        // ── Show / Hide password toggle ──
+        function togglePw() {
+            const input  = document.getElementById('pw-input');
+            const toggle = document.getElementById('pw-toggle');
+
+            if (input.type === 'password') {
+                input.type = 'text';
+                toggle.textContent = 'Hide';
+            } else {
+                input.type = 'password';
+                toggle.textContent = 'Show';
+            }
+        }
+
+        // ── Log in button → validate → show success ──
+        function doLogin() {
+            const pw = document.getElementById('pw-input').value;
+
+            if (!pw) {
+                document.getElementById('pw-input').focus();
+                alert('Please enter your password.');
+                return;
+            }
+
+            // Pass identity to step 3
+            const identity = document.getElementById('s2-identity').textContent;
+            document.getElementById('s3-identity').textContent = identity;
+
+            // Switch to step 3
+            document.getElementById('step2').classList.add('hidden');
+            document.getElementById('step3').classList.remove('hidden');
+        }
+
+        // ── Reset everything back to step 1 ──
+        function reset() {
+            document.getElementById('step3').classList.add('hidden');
+            document.getElementById('step2').classList.add('hidden');
+            document.getElementById('step1').classList.remove('hidden');
+
+            // Clear all inputs
+            document.getElementById('phone-input').value = '';
+            document.getElementById('email-input').value = '';
+            document.getElementById('pw-input').value = '';
+            document.getElementById('pw-input').type = 'password';
+            document.getElementById('pw-toggle').textContent = 'Show';
+
+            // Reset to phone tab
+            setTab('phone');
+        }
+
+        // ── Allow pressing Enter to continue ──
+        document.getElementById('phone-input').addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') goStep2();
+        });
+        document.getElementById('email-input').addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') goStep2();
+        });
+        document.getElementById('pw-input').addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') doLogin();
+        });
+    </script>
+
+</body>
+</html>

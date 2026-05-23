@@ -4,16 +4,13 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>contact</title>
+    <title>Contact Airbnb</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="script.js" defer></script>
 </head>
 
 <body class="bg-gray-100">
     <!-- NAVBAR -->
-    <nav
-        class="bg-white border-b border-gray-200 px-10 py-8 flex items-center justify-between shadow-lg  sticky top-0 z-50">
-        <!-- <nav class="bg-white border-b border-gray-200 px-10 py-8 flex items-center justify-between shadow-lg sticky top-0 z-50"></nav> -->
+    <nav class="bg-white border-b border-gray-200 px-10 py-8 flex items-center justify-between shadow-lg sticky top-0 z-50">
         <!-- LEFT: Logo -->
         <div class="flex items-center gap-1 text-[#FF385C]">
             <svg width="28" height="28" viewBox="0 0 30 32" fill="#FF385C">
@@ -23,58 +20,481 @@
         </div>
 
         <!-- CENTER: Nav Tabs -->
-        <div class="flex items-center gap-2  ">
-
-            <!-- Homes Tab -->
-            <button onclick="setActive(this); location.href='index.html'"
-                class="nav-tab active-tab  relative flex items-center gap-2 px-4 py-2 text-sm font-semibold text-gray-600  hover:bg-gray-100 rounded-lg border-transparent">
-                <span
-                    class="absolute -top-4 left-10 bg-blue-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full">NEW</span>
+        <div class="flex items-center gap-2">
+            <button onclick="location.href='index.html'"
+                class="nav-tab relative flex items-center gap-2 px-4 py-2 text-sm font-semibold text-gray-600 hover:bg-gray-100 rounded-lg border-transparent">
+                <span class="absolute -top-4 left-10 bg-blue-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full">NEW</span>
                 <span class="text-2xl">🏠</span> Home
             </button>
-
-            <!-- Experiences Tab -->
-            <!-- <button onclick="setActive(this)"
-                class="nav-tab relative flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-600 hover:bg-gray-100 rounded-lg  border-transparent">
-                <span
-                    class="absolute -top-4 left-10 bg-blue-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full">NEW</span>
-                <span class="text-2xl">🎈</span> Experiences
-            </button> -->
-
             <a href="experience.html"
                 class="nav-tab relative flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-600 hover:bg-gray-100 rounded-lg border-transparent">
-                <span
-                    class="absolute -top-4 left-10 bg-blue-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full">NEW</span>
+                <span class="absolute -top-4 left-10 bg-blue-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full">NEW</span>
                 <span class="text-2xl">🎈</span> Experiences
             </a>
-
-            <!-- Services Tab -->
-            <button onclick="setActive(this); location.href='services.html'"
-                class="nav-tab relative flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-600 hover:bg-gray-100 rounded-lg  border-transparent">
-                <span
-                    class="absolute -top-4 left-10 bg-blue-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full">NEW</span>
+            <button onclick="location.href='services.html'"
+                class="nav-tab relative flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-600 hover:bg-gray-100 rounded-lg border-transparent">
+                <span class="absolute -top-4 left-10 bg-blue-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full">NEW</span>
                 <span class="text-2xl">🛎️</span> Services
             </button>
-
-             <!-- contact Tab -->
-            <button onclick="setActive(this); location.href='contact.html'"
-                class="nav-tab relative flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-600 hover:bg-gray-100 rounded-lg  border-transparent">
-                <span
-                    class="absolute -top-4 left-10 bg-blue-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full">NEW</span>
+            <button onclick="location.href='contact.html'"
+                class="nav-tab relative flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-600 hover:bg-gray-100 rounded-lg border-transparent">
+                <span class="absolute -top-4 left-10 bg-blue-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full">NEW</span>
                 <span class="text-2xl">📞</span> Contact
             </button>
         </div>
 
         <!-- RIGHT: Actions -->
         <div class="flex items-center gap-1">
-            <a href="#" class="text-sm font-semibold text-gray-700 px-4 py-2 rounded-full hover:bg-gray-100">
-                Become a host
-            </a>
+            <a href="#" class="text-sm font-semibold text-gray-700 px-4 py-2 rounded-full hover:bg-gray-100">Become a host</a>
             <button class="text-xl p-2 rounded-full hover:bg-gray-100">🌐</button>
             <button class="text-xl p-2 rounded-full hover:bg-gray-100">☰</button>
         </div>
     </nav>
 
-</body>
+    <!-- MAIN CONTENT -->
+    <main class="max-w-4xl mx-auto px-6 py-16 font-sans">
 
+        <!-- ROLE SELECTION -->
+        <div id="step-role">
+            <h1 class="text-4xl mb-2 font-bold text-red-500">Contact Us</h1>
+            <p class="font-semibold">We personalize your support channels based on your active account status.</p>
+            <p class="font-semibold mt-10 mb-10">We'll start with a few questions and get you to the right place.</p>
+        </div>
+
+        <div class="flex gap-4">
+            <div id="btn-guest"
+                class="cursor-pointer border-solid border-2 border-gray-300 p-2 rounded-md transform hover:scale-105 duration-500 hover:shadow-lg">
+                <svg class="w-10 h-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path fill="rgb(243, 66, 97)" d="M264 112L376 112C380.4 112 384 115.6 384 120L384 160L256 160L256 120C256 115.6 259.6 112 264 112zM208 120L208 160L128 160C92.7 160 64 188.7 64 224L64 320L576 320L576 224C576 188.7 547.3 160 512 160L432 160L432 120C432 89.1 406.9 64 376 64L264 64C233.1 64 208 89.1 208 120zM576 368L384 368L384 384C384 401.7 369.7 416 352 416L288 416C270.3 416 256 401.7 256 384L256 368L64 368L64 480C64 515.3 92.7 544 128 544L512 544C547.3 544 576 515.3 576 480L576 368z"/>
+                </svg>
+                <h2 class="font-semibold mt-1">I'm a Guest</h2>
+                <p class="text-sm text-gray-500">Help with finding stays, current trips, refunds, or safety concerns.</p>
+            </div>
+            <div id="btn-host"
+                class="cursor-pointer border-solid border-2 border-gray-300 p-2 rounded-md transform hover:scale-105 duration-500 hover:shadow-lg">
+                <svg class="w-10 h-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path fill="rgb(243, 66, 97)" d="M341.8 72.6C329.5 61.2 310.5 61.2 298.3 72.6L74.3 280.6C64.7 289.6 61.5 303.5 66.3 315.7C71.1 327.9 82.8 336 96 336L112 336L112 512C112 547.3 140.7 576 176 576L464 576C499.3 576 528 547.3 528 512L528 336L544 336C557.2 336 569 327.9 573.8 315.7C578.6 303.5 575.4 289.5 565.8 280.6L341.8 72.6zM264 320C264 289.1 289.1 264 320 264C350.9 264 376 289.1 376 320C376 350.9 350.9 376 320 376C289.1 376 264 350.9 264 320zM208 496C208 451.8 243.8 416 288 416L352 416C396.2 416 432 451.8 432 496C432 504.8 424.8 512 416 512L224 512C215.2 512 208 504.8 208 496z"/>
+                </svg>
+                <h2 class="font-semibold mt-1">I'm a Host</h2>
+                <p class="text-sm text-gray-500">Help with property listings, calendar syncing, settings, or your payouts.</p>
+            </div>
+        </div>
+
+        <div class="w-full border-solid border-b-2 border-gray-300 mt-10"></div>
+
+        <!-- TOPIC CARDS -->
+        <section id="topic-section">
+            <h2 id="topic-heading" class="font-bold mt-5 mb-5 text-2xl text-red-500 hidden">What can we help you with?</h2>
+
+            <!-- Guest Cards -->
+            <div id="guest-form" class="grid grid-cols-2 gap-4 hidden">
+                <div class="help-btn flex items-center justify-around items-center cursor-pointer p-4 border-solid border-2 border-gray-300 gap-2 rounded-md transform hover:scale-105 duration-500 hover:shadow-lg">
+                    <div class=" text-2xl ">🏠</div>
+                    <div>
+                        <p class="font-semibold">Reservations & trips</p>
+                        <p class="text-sm text-gray-500">Cancel a booking, check-in issues, or change your dates</p>
+                    </div>
+                </div>
+                <div class="help-btn flex justify-around items-center cursor-pointer p-4 border-solid border-2 border-gray-300 gap-2 rounded-md transform hover:scale-105 duration-500 hover:shadow-lg">
+                    <div class=" text-2xl">👤</div>
+                    <div>
+                        <p class="font-semibold">Account</p>
+                        <p class="text-sm text-gray-500">Log-in issues, profile settings, or identity verification</p>
+                    </div>
+                </div>
+                <div class="help-btn flex justify-around items-center cursor-pointer p-4 border-solid border-2 border-gray-300 gap-2 rounded-md transform hover:scale-105 duration-500 hover:shadow-lg">
+                    <div class=" text-2xl">☂️</div>
+                    <div>
+                        <p class="font-semibold">AirCover</p>
+                        <p class="text-sm text-gray-500">File a claim for rebooking, refund, or damage protection</p>
+                    </div>
+                </div>
+                <div class="help-btn flex justify-around items-center cursor-pointer p-4 border-solid border-2 border-gray-300 gap-2 rounded-md transform hover:scale-105 duration-500 hover:shadow-lg">
+                    <div class="text-2xl">💳</div>
+                    <div>
+                        <p class="font-semibold">Payments & refunds</p>
+                        <p class="text-sm text-gray-500">Billing questions, refund status, or payment methods</p>
+                    </div>
+                </div>
+                <div class="help-btn flex justify-around items-center cursor-pointer p-4 border-solid border-2 border-gray-300 gap-2 rounded-md transform hover:scale-105 duration-500 hover:shadow-lg">
+                    <div class=" text-2xl">🛡️</div>
+                    <div>
+                        <p class="font-semibold">Safety concern</p>
+                        <p class="text-sm text-gray-500">Report an emergency, suspicious activity, or policy violation</p></div>
+                </div>
+                <div class="help-btn flex justify-around items-center cursor-pointer p-4 border-solid border-2 border-gray-300 gap-2 rounded-md transform hover:scale-105 duration-500 hover:shadow-lg">
+                    <div class=" text-2xl">💬</div>
+                    <div>
+                        <p class="font-semibold">Something else</p>
+                        <p class="text-sm text-gray-500">Accessibility, anti-discrimination, feedback, and more</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Host Cards -->
+            <div id="host-form" class="grid grid-cols-2 gap-4 hidden">
+                <div class="help-btn flex justify-around items-center cursor-pointer p-4 border-solid border-2 border-gray-300 gap-2 rounded-md transform hover:scale-105 duration-500 hover:shadow-lg">
+                    <div class="text-2xl">🔑</div>
+                    <div>
+                        <p class="font-semibold">Listing Management</p>
+                        <p class="text-sm text-gray-500">Update your descriptions, amenities, or photo layouts</p>
+                    </div>
+                </div>
+                <div class="help-btn flex justify-around items-center cursor-pointer p-4 border-solid border-2 border-gray-300 gap-2 rounded-md transform hover:scale-105 duration-500 hover:shadow-lg">
+                    <div class="text-2xl">💰</div>
+                    <div><p class="font-semibold">Payout & Earnings</p>
+                        <p class="text-sm text-gray-500">Track missing funds or access your seasonal tax invoices</p>
+                    </div>
+                </div>
+                <div class="help-btn flex justify-around items-center cursor-pointer p-4 border-solid border-2 border-gray-300 gap-2 rounded-md transform hover:scale-105 duration-500 hover:shadow-lg">
+                    <div class="text-2xl">👥</div>
+                    <div>
+                        <p class="font-semibold">Guest Issues</p>
+                        <p class="text-sm text-gray-500">Report poor guest behavior or file profile verification complaints</p>
+                    </div>
+                </div>
+                <div class="help-btn flex justify-around items-center cursor-pointer p-4 border-solid border-2 border-gray-300 gap-2 rounded-md transform hover:scale-105 duration-500 hover:shadow-lg">
+                    <div class="text-2xl">📅</div>
+                    <div>
+                        <p class="font-semibold">Calendar & Pricing</p>
+                        <p class="text-sm text-gray-500">Sync your calendars or change base nightly rates</p>
+                    </div>
+                </div>
+                <div class="help-btn flex justify-around items-center cursor-pointer p-4 border-solid border-2 border-gray-300 gap-2 rounded-md transform hover:scale-105 duration-500 hover:shadow-lg">
+                    <div class="text-2xl">🛡️</div>
+                    <div>
+                        <p class="font-semibold">AirCover for Hosts</p>
+                        <p class="text-sm text-gray-500">Request money for guest damages or house violations</p></div>
+                </div>
+                <div class="help-btn flex justify-around items-center cursor-pointer p-4 border-solid border-2 border-gray-300 gap-2 rounded-md transform hover:scale-105 duration-500 hover:shadow-lg">
+                    <div class="text-2xl">🔧</div>
+                    <div>
+                        <p class="font-semibold">Hosting Tools</p>
+                        <p class="text-sm text-gray-500">Configure smart lock access steps or co-hosting steps</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div id="topic-line" class="w-full border-solid border-b-2 border-gray-300 mt-10 hidden"></div>
+
+        <!-- CONTACT CHANNELS -->
+        <section id="contact-option" class="mt-10 hidden">
+            <div>
+                <h2 class="font-bold text-2xl text-red-500 mb-1">Ways to get in touch</h2>
+                <p>Choose the option that works best for you.</p>
+            </div>
+            <div class="border-solid border-2 border-gray-200 rounded-md mt-5">
+                <div id="send-message-btn"
+                    class="flex gap-5 border-b border-gray-200 p-5 hover:bg-gray-200 cursor-pointer duration-300">
+                    <div class="text-2xl p-2 bg-gray-200 rounded-full">✉️</div>
+                    <div>
+                        <h3 class="font-semibold">Send a message</h3>
+                        <p>Fill out the form below and we'll reply by email.</p>
+                    </div>
+                </div>
+                <div class="flex gap-5 border-b border-gray-200 p-5 hover:bg-gray-200 cursor-pointer duration-300"
+                    onclick="alert('Connecting with a live chat operator... Please do not close your window.')">
+                    <div class="text-2xl p-2 bg-gray-200 rounded-full">💭</div>
+                    <div>
+                        <h3 class="font-semibold">Live chat</h3>
+                        <p>Chat with us in real-time.</p>
+                    </div>
+                </div>
+                <div class="flex p-5 gap-5 hover:bg-gray-200 cursor-pointer duration-300"
+                    onclick="alert('Connecting with a live text operator... Please do not close your window.')">
+                    <div class="text-2xl p-2 bg-gray-200 rounded-full">📞</div>
+                    <div>
+                        <h3 class="font-semibold">Call us</h3>
+                        <p>Call us -- available 24/7 in 11+ languages.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div id="help-card-line" class="w-full border-solid border-b-2 border-gray-300 mt-10 hidden"></div>
+
+        <!-- CONTACT FORM -->
+        <section id="contact-form" class="border-2 border-gray-300 mt-5 rounded-xl p-6 hidden">
+            <div class="flex items-center gap-3">
+                <svg class="w-7 h-7 text-rose-500" viewBox="0 0 32 32" fill="#FF385C" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16 2C14.8 2 13.6 2.6 12.8 3.6L4.2 16.4C2.8 18.4 2.4 21 3.4 23.2c1 2.4 3.4 4 6 4 1.6 0 3.2-.6 4.4-1.6.4.4.8.8 1.2 1 .6.4 1.2.6 2 .6.6 0 1.4-.2 2-.6.4-.2.8-.6 1.2-1 1.2 1 2.8 1.6 4.4 1.6 2.6 0 5-1.6 6-4 1-2.2.6-4.8-.8-6.8L21.2 3.6C20.4 2.6 19.2 2 18 2h-2z"/>
+                </svg>
+                <div>
+                    <h1 class="text-2xl font-bold text-red-500">Send us a message</h1>
+                    <p class="text-gray-500 text-sm">We'll get back to you as soon as possible.</p>
+                </div>
+            </div>
+
+            <div class="w-full border-b-2 border-gray-300 mt-6 mb-6"></div>
+
+            <div class="grid grid-cols-2 gap-4 mb-5">
+                <div>
+                    <label class="block font-semibold mb-1">First name</label>
+                    <input type="text" placeholder="First name"
+                        class="w-full px-4 py-3 text-sm text-gray-900 border border-gray-300 rounded-lg outline-none transition-all duration-150 placeholder:text-gray-400 focus:border-gray-900 focus:ring-2 focus:ring-gray-900/10 hover:border-gray-400">
+                </div>
+                <div>
+                    <label class="block font-semibold mb-1">Last name</label>
+                    <input type="text" placeholder="Last name"
+                        class="w-full px-4 py-3 text-sm text-gray-900 border border-gray-300 rounded-lg outline-none transition-all duration-150 placeholder:text-gray-400 focus:border-gray-900 focus:ring-2 focus:ring-gray-900/10 hover:border-gray-400">
+                </div>
+            </div>
+
+            <div class="mb-5">
+                <label class="block font-semibold mb-1">Email</label>
+                <input type="email" placeholder="Email"
+                    class="w-full px-4 py-3 text-sm text-gray-900 border border-gray-300 rounded-lg outline-none transition-all duration-150 placeholder:text-gray-400 focus:border-gray-900 focus:ring-2 focus:ring-gray-900/10 hover:border-gray-400">
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 mb-5">
+                <div>
+                    <label class="block font-semibold mb-1">Phone <span class="text-gray-400 font-normal">(optional)</span></label>
+                    <input type="tel" placeholder="Phone number"
+                        class="w-full px-4 py-3 text-sm text-gray-900 border border-gray-300 rounded-lg outline-none transition-all duration-150 placeholder:text-gray-400 focus:border-gray-900 focus:ring-2 focus:ring-gray-900/10 hover:border-gray-400">
+                </div>
+                <div>
+                    <label class="block font-semibold mb-1">Reservation code <span class="text-gray-400 font-normal">(optional)</span></label>
+                    <input type="text" placeholder="Reservation code"
+                        class="w-full px-4 py-3 text-sm text-gray-900 border border-gray-300 rounded-lg outline-none transition-all duration-150 placeholder:text-gray-400 focus:border-gray-900 focus:ring-2 focus:ring-gray-900/10 hover:border-gray-400">
+                </div>
+            </div>
+
+            <div class="mb-5">
+                <label class="block font-semibold mb-1">Topic</label>
+                <div class="relative">
+                    <select id="tf-topic"
+                        class="w-full appearance-none px-4 py-3 text-sm text-gray-900 border border-gray-300 rounded-lg outline-none bg-white focus:border-gray-900 focus:ring-2 focus:ring-gray-900/10 hover:border-gray-400 cursor-pointer">
+                        <option value="">Select a topic</option>
+                        <option>Reservations & trips</option>
+                        <option>Cancellations & refunds</option>
+                        <option>Payments & billing</option>
+                        <option>Account & login</option>
+                        <option>Safety concern</option>
+                        <option>AirCover claim</option>
+                        <option>Accessibility</option>
+                        <option>Hosting</option>
+                        <option>Other</option>
+                    </select>
+                    <span class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-gray-400">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+                    </span>
+                </div>
+            </div>
+
+            <div class="mb-5">
+                <label class="block font-semibold mb-1">Subject</label>
+                <input id="tf-subject" type="text" placeholder="Brief summary of your issue"
+                    class="w-full px-4 py-3 text-sm text-gray-900 border border-gray-300 rounded-lg outline-none transition-all duration-150 placeholder:text-gray-400 focus:border-gray-900 focus:ring-2 focus:ring-gray-900/10 hover:border-gray-400">
+            </div>
+
+            <div class="mb-5">
+                <div class="flex items-center justify-between mb-1">
+                    <label class="block font-semibold">Message</label>
+                    <span class="text-xs text-gray-400" id="tf-count">0 / 2000</span>
+                </div>
+                <textarea id="tf-msg" rows="5" maxlength="2000"
+                    placeholder="Describe your issue in detail — include dates, reservation info, and anything helpful..."
+                    class="w-full px-4 py-3 text-sm text-gray-900 border border-gray-300 rounded-lg outline-none transition-all duration-150 placeholder:text-gray-400 resize-y focus:border-gray-900 focus:ring-2 focus:ring-gray-900/10 hover:border-gray-400 leading-relaxed"></textarea>
+            </div>
+
+            <button id="submit-btn" type="button"
+                class="bg-[#FF385C] hover:bg-[#E61E43] text-white font-semibold px-6 py-3 rounded-lg transition-all active:scale-95 text-sm mb-3">
+                Submit Ticket
+            </button>
+
+            <!-- Success message (hidden by default) -->
+            <div id="success-msg" class="hidden bg-green-50 border border-green-300 text-green-700 rounded-lg px-4 py-3 text-sm font-medium mb-3">
+                ✓ Message sent! We'll get back to you within 24 hours.
+            </div>
+
+            <p class="text-xs text-gray-400 leading-relaxed">
+                By submitting this form you agree to Airbnb's
+                <a href="#" class="underline text-gray-600 hover:text-gray-900">Privacy Policy</a> and
+                <a href="#" class="underline text-gray-600 hover:text-gray-900">Terms of Service</a>.
+            </p>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-100 border-t border-gray-300 pt-10 pb-6 px-6 md:px-12 lg:px-16">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 border-b border-gray-200 pb-10">
+            <div class="flex flex-col gap-3">
+                <h4 class="text-sm font-semibold text-gray-900">Support</h4>
+                <a href="#" class="text-sm text-gray-600 hover:underline">Help Centre</a>
+                <a href="#" class="text-sm text-gray-600 hover:underline">Get help with a safety issue</a>
+                <a href="#" class="text-sm text-gray-600 hover:underline">AirCover</a>
+                <a href="#" class="text-sm text-gray-600 hover:underline">Anti-discrimination</a>
+                <a href="#" class="text-sm text-gray-600 hover:underline">Disability support</a>
+                <a href="#" class="text-sm text-gray-600 hover:underline">Cancellation options</a>
+                <a href="#" class="text-sm text-gray-600 hover:underline">Report neighbourhood concern</a>
+            </div>
+            <div class="flex flex-col gap-3">
+                <h4 class="text-sm font-semibold text-gray-900">Hosting</h4>
+                <a href="#" class="text-sm text-gray-600 hover:underline">Airbnb your home</a>
+                <a href="#" class="text-sm text-gray-600 hover:underline">Airbnb your experience</a>
+                <a href="#" class="text-sm text-gray-600 hover:underline">AirCover for Hosts</a>
+                <a href="#" class="text-sm text-gray-600 hover:underline">Hosting resources</a>
+                <a href="#" class="text-sm text-gray-600 hover:underline">Community forum</a>
+                <a href="#" class="text-sm text-gray-600 hover:underline">Hosting responsibly</a>
+                <a href="#" class="text-sm text-gray-600 hover:underline">Find a co-host</a>
+            </div>
+            <div class="flex flex-col gap-3">
+                <h4 class="text-sm font-semibold text-gray-900">Airbnb</h4>
+                <a href="#" class="text-sm text-gray-600 hover:underline">Newsroom</a>
+                <a href="#" class="text-sm text-gray-600 hover:underline">Careers</a>
+                <a href="#" class="text-sm text-gray-600 hover:underline">Investors</a>
+                <a href="#" class="text-sm text-gray-600 hover:underline">Airbnb.org emergency stays</a>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-sm text-gray-600 py-6">
+            <div class="flex flex-wrap items-center gap-1">
+                <span>© 2026 Airbnb, Inc.</span>
+                <span class="mx-1">·</span>
+                <a href="#" class="hover:underline">Privacy</a>
+                <span class="mx-1">·</span>
+                <a href="#" class="hover:underline">Terms</a>
+                <span class="mx-1">·</span>
+                <a href="#" class="hover:underline">Company details</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <button class="flex items-center gap-1 hover:underline text-sm font-medium">🌐 English (IN)</button>
+                <button class="flex items-center gap-1 hover:underline text-sm font-medium">₹ INR</button>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ── Helper: scroll element into view accounting for sticky nav ──
+        function scrollBelowNav(element) {
+            requestAnimationFrame(() => {
+                const navHeight = document.querySelector('nav').offsetHeight;
+                const top = element.getBoundingClientRect().top + window.pageYOffset - navHeight - 20;
+                window.scrollTo({ top, behavior: 'smooth' });
+            });
+        }
+
+        // ── Get elements (AFTER they exist in the DOM) ──
+        const btnGuest       = document.getElementById('btn-guest');
+        const btnHost        = document.getElementById('btn-host');
+        const topicHeading   = document.getElementById('topic-heading');
+        const guestForm      = document.getElementById('guest-form');
+        const hostForm       = document.getElementById('host-form');
+        const topicLine      = document.getElementById('topic-line');
+        const contactOption  = document.getElementById('contact-option');
+        const helpCardLine   = document.getElementById('help-card-line');
+        const contactForm    = document.getElementById('contact-form');
+        const sendMessageBtn = document.getElementById('send-message-btn');
+        const submitBtn      = document.getElementById('submit-btn');
+        const successMsg     = document.getElementById('success-msg');
+        const tfMsg          = document.getElementById('tf-msg');
+        const tfCount        = document.getElementById('tf-count');
+
+        // ── Guest button ──
+        btnGuest.addEventListener('click', () => {
+            btnGuest.classList.add('border-rose-500', 'bg-rose-50');
+            btnHost.classList.remove('border-rose-500', 'bg-rose-50');
+
+            topicHeading.classList.remove('hidden');
+            topicLine.classList.remove('hidden');
+            guestForm.classList.remove('hidden');
+            hostForm.classList.add('hidden');
+
+            // Reset sections below
+            contactOption.classList.add('hidden');
+            helpCardLine.classList.add('hidden');
+            contactForm.classList.add('hidden');
+
+            scrollBelowNav(topicHeading);
+        });
+
+        // ── Host button ──
+        btnHost.addEventListener('click', () => {
+            btnHost.classList.add('border-rose-500', 'bg-rose-50');
+            btnGuest.classList.remove('border-rose-500', 'bg-rose-50');
+
+            topicHeading.classList.remove('hidden');
+            topicLine.classList.remove('hidden');
+            hostForm.classList.remove('hidden');
+            guestForm.classList.add('hidden');
+
+            // Reset sections below
+            contactOption.classList.add('hidden');
+            helpCardLine.classList.add('hidden');
+            contactForm.classList.add('hidden');
+
+            scrollBelowNav(topicHeading);
+        });
+
+        // ── Topic card click (event delegation on parent) ──
+        document.getElementById('topic-section').addEventListener('click', (e) => {
+            const card = e.target.closest('.help-btn');
+            if (!card) return; // not a card click, ignore
+
+            // Highlight selected card
+            document.querySelectorAll('.help-btn').forEach(btn => {
+                btn.classList.remove('border-rose-500', 'bg-rose-50');
+            });
+            card.classList.add('border-rose-500', 'bg-rose-50');
+
+            // Show "Ways to get in touch"
+            contactOption.classList.remove('hidden');
+            helpCardLine.classList.remove('hidden');
+
+            // Hide form again if switching cards
+            contactForm.classList.add('hidden');
+
+            scrollBelowNav(contactOption);
+        });
+
+        // ── Send a message → show form ──
+        sendMessageBtn.addEventListener('click', () => {
+            contactForm.classList.remove('hidden');
+            scrollBelowNav(contactForm);
+        });
+
+        // ── Character counter ──
+        tfMsg.addEventListener('input', function () {
+            tfCount.textContent = this.value.length + ' / 2000';
+        });
+
+        // ── Form submit with validation ──
+        submitBtn.addEventListener('click', () => {
+            const fields = [
+                { el: document.querySelector('input[placeholder="First name"]'), label: 'First name' },
+                { el: document.querySelector('input[placeholder="Last name"]'),  label: 'Last name'  },
+                { el: document.querySelector('input[placeholder="Email"]'),      label: 'Email'      },
+                { el: document.getElementById('tf-topic'),                       label: 'Topic'      },
+                { el: document.getElementById('tf-subject'),                     label: 'Subject'    },
+                { el: document.getElementById('tf-msg'),                         label: 'Message'    },
+            ];
+
+            for (const field of fields) {
+                if (!field.el.value.trim()) {
+                    field.el.focus();
+                    field.el.classList.add('border-rose-500', 'ring-2', 'ring-rose-200');
+                    field.el.addEventListener('input', () => {
+                        field.el.classList.remove('border-rose-500', 'ring-2', 'ring-rose-200');
+                    }, { once: true });
+                    alert('Please fill in: ' + field.label);
+                    return;
+                }
+            }
+
+            const emailEl = document.querySelector('input[placeholder="Email"]');
+            if (!emailEl.value.includes('@')) {
+                alert('Please enter a valid email address.');
+                emailEl.focus();
+                return;
+            }
+
+            // All good — show success
+            successMsg.classList.remove('hidden');
+            submitBtn.textContent = '✓ Sent!';
+            submitBtn.classList.remove('bg-[#FF385C]', 'hover:bg-[#E61E43]');
+            submitBtn.classList.add('bg-green-500');
+            submitBtn.disabled = true;
+            scrollBelowNav(successMsg);
+        });
+    </script>
+</body>
 </html>

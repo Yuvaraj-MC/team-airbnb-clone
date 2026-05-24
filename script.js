@@ -29,6 +29,107 @@
   "Zurich", "Zagreb", "Zambia", "Zealand"
 ];
 
+
+
+// Fav page lo cards show cheyyi
+if (document.getElementById('favContainer')) {
+    const favItems = JSON.parse(localStorage.getItem('favItems')) || [];
+    const container = document.getElementById('favContainer');
+
+    if (favItems.length === 0) {
+        container.innerHTML = `
+            <p class="text-gray-500 text-lg">No favourites yet! ❤️</p>
+        `;
+    } else {
+        favItems.forEach(item => {
+            container.innerHTML += `
+                <div class="min-w-[230px] bg-white rounded-xl shadow-md overflow-hidden">
+                    <img src="${item.img}" class="w-full h-[200px] object-cover">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-sm mb-1">${item.name}</h3>
+                        <p class="text-sm text-gray-600 mb-1">${item.price} for 1 night</p>
+                        <div class="flex items-center gap-1 text-sm">
+                            <span>★</span>
+                            <span class="font-semibold">${item.rating}</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+    }
+}
+
+
+
+// Favourites array
+let favItems = JSON.parse(localStorage.getItem('favItems')) || [];
+
+function toggleFav(btn, name, price, rating, img) {
+    const index = favItems.findIndex(item => item.name === name);
+    
+    if (index === -1) {
+        // Add to favs
+        favItems.push({ name, price, rating, img });
+        btn.classList.add('text-[#FF385C]');
+    } else {
+        // Remove from favs
+        favItems.splice(index, 1);
+        btn.classList.remove('text-[#FF385C]');
+    }
+    
+    // Save to localStorage
+    localStorage.setItem('favItems', JSON.stringify(favItems));
+    
+    // Update count
+    updateFavCount();
+}
+
+function updateFavCount() {
+    const count = favItems.length;
+    const badge = document.getElementById('favCount');
+    
+    if (count > 0) {
+        badge.classList.remove('hidden');
+        badge.textContent = count;
+    } else {
+        badge.classList.add('hidden');
+    }
+}
+
+// Page load chessinappudu count update cheyyi
+updateFavCount();
+
+
+
+
+
+
+
+
+// global popup code
+function showGlobalPopup() {
+    document.getElementById('globalPopup').classList.remove('hidden');
+}
+
+function closeGlobalPopup() {
+    document.getElementById('globalPopup').classList.add('hidden');
+}
+
+
+function showHelpPopup() {
+    document.getElementById('helpPopup').classList.remove('hidden');
+}
+
+function closeHelpPopup() {
+    document.getElementById('helpPopup').classList.add('hidden');
+}
+
+
+
+function becomehost() {
+  location.href='i1.html'
+}
+
   function showSuggestions(value) {
     const box = document.getElementById('suggestionBox');
 

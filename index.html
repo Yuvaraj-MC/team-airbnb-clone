@@ -26,7 +26,7 @@
         <div class="flex items-center gap-2  ">
 
             <!-- Homes Tab -->
-           <button onclick="setActive(this); location.href='index.html'"
+            <button onclick="setActive(this); location.href='index.html'"
                 class="nav-tab active-tab  relative flex items-center gap-2 px-4 py-2 text-sm font-semibold text-gray-600  hover:bg-gray-100 rounded-lg border-transparent">
                 <span
                     class="absolute -top-4 left-10 bg-blue-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full">NEW</span>
@@ -56,8 +56,8 @@
                 <span class="text-2xl">🛎️</span> Services
             </button>
 
-            
-             <!-- contact Tab -->
+
+            <!-- contact Tab -->
             <button onclick="setActive(this); location.href='contact.html'"
                 class="nav-tab relative flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-600 hover:bg-gray-100 rounded-lg  border-transparent">
                 <span
@@ -68,13 +68,131 @@
 
         <!-- RIGHT: Actions -->
         <div class="flex items-center gap-1">
-            <a href="#" class="text-sm font-semibold text-gray-700 px-4 py-2 rounded-full hover:bg-gray-100">
+            <a href="#" class="text-sm font-semibold text-gray-700 px-4 py-2 rounded-full hover:bg-gray-100"
+                onclick="becomehost()">
                 Become a host
             </a>
-            <button class="text-xl p-2 rounded-full hover:bg-gray-100">🌐</button>
-            <button class="text-xl p-2 rounded-full hover:bg-gray-100">☰</button>
+            <button class="text-xl p-2 rounded-full hover:bg-gray-100" onclick="showGlobalPopup()">🌐</button>
+            <button class="text-xl p-2 rounded-full hover:bg-gray-100" onclick="showHelpPopup()">☰</button>
+
+            <!-- Fav Button -->
+            <button onclick="location.href='fav.html'" class="relative text-xl p-2 rounded-full hover:bg-gray-100">
+                ❤️
+                <span id="favCount" class="absolute -top-1 -right-1 bg-[#FF385C] text-white 
+                 text-[9px] font-bold w-4 h-4 rounded-full 
+                 flex items-center justify-center hidden">
+                    0
+                </span>
+            </button>
         </div>
     </nav>
+
+
+    <!-- Help Center Popup -->
+
+
+    <div id="helpPopup" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div class="bg-white rounded-2xl shadow-xl p-8 w-full max-w-sm">
+
+            <!-- Close Button -->
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-xl font-bold text-gray-800">Help Center</h2>
+                <button onclick="closeHelpPopup()" class="text-gray-500 hover:text-black text-2xl">✕</button>
+            </div>
+
+            <!-- Help Options -->
+            <div class="flex flex-col gap-4">
+                <div
+                    class="flex items-center gap-3 p-3 border border-gray-200 rounded-xl hover:bg-gray-50 cursor-pointer">
+                    <span class="text-2xl">❓</span>
+                    <div>
+                        <p class="font-semibold text-gray-800">FAQs</p>
+                        <p class="text-sm text-gray-500">Common questions answered</p>
+                    </div>
+                </div>
+                <div
+                    class="flex items-center gap-3 p-3 border border-gray-200 rounded-xl hover:bg-gray-50 cursor-pointer">
+                    <span class="text-2xl">💬</span>
+                    <div>
+                        <p class="font-semibold text-gray-800">Chat Support</p>
+                        <p class="text-sm text-gray-500">Talk to our support team</p>
+                    </div>
+                </div>
+                <div
+                    class="flex items-center gap-3 p-3 border border-gray-200 rounded-xl hover:bg-gray-50 cursor-pointer">
+                    <span class="text-2xl">📞</span>
+                    <div>
+                        <p class="font-semibold text-gray-800">Contact Us</p>
+                        <p class="text-sm text-gray-500">Call or email us anytime</p>
+                    </div>
+                </div>
+                <div
+                    class="flex items-center gap-3 p-3 border border-gray-200 rounded-xl hover:bg-gray-50 cursor-pointer">
+                    <span class="text-2xl">📖</span>
+                    <div>
+                        <p class="font-semibold text-gray-800">Guide</p>
+                        <p class="text-sm text-gray-500">How to use Airbnb</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Global Popup -->
+
+
+    <div id="globalPopup" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div class="bg-white rounded-2xl shadow-xl p-8 w-full max-w-sm">
+
+            <!-- Close Button -->
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-xl font-bold text-gray-800">Our Project</h2>
+                <button onclick="closeGlobalPopup()" class="text-gray-500 hover:text-black text-2xl">✕</button>
+            </div>
+
+            <!-- Content -->
+            <div class="flex flex-col gap-4">
+                <div class="flex items-center gap-3 p-3 border border-gray-200 rounded-xl hover:bg-gray-50">
+                    <span class="text-2xl">🏠</span>
+                    <div>
+                        <p class="font-semibold text-gray-800">Homes</p>
+                        <p class="text-sm text-gray-500">Find your perfect stay</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3 p-3 border border-gray-200 rounded-xl hover:bg-gray-50">
+                    <span class="text-2xl">🎈</span>
+                    <div>
+                        <p class="font-semibold text-gray-800">Experiences</p>
+                        <p class="text-sm text-gray-500">Unique activities nearby</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3 p-3 border border-gray-200 rounded-xl hover:bg-gray-50">
+                    <span class="text-2xl">🛎️</span>
+                    <div>
+                        <p class="font-semibold text-gray-800">Services</p>
+                        <p class="text-sm text-gray-500">Premium services for you</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
 
 
     <!-- SEARCH BAR -->
@@ -193,7 +311,7 @@
             </div>
         </div>
     </div>
-    
+
 
     <!-- Main Content    Puducherry homes with free cancellation -->
     <div class="max-w-7xl mx-auto px-6 py-8">
@@ -228,11 +346,13 @@
                         <button class="absolute top-3 left-3 px-3 py-1 bg-white rounded-full text-xs font-semibold">
                             Guest favourite
                         </button>
-                        <button class="absolute top-3 right-3 text-white hover:scale-110 transition">
+                        <!-- Heart Button Fixed -->
+                        <button
+                            onclick="toggleFav(this, 'Home in Puducherry', '₹4,679', '4.89', './images/auroville.webp')"
+                            class="absolute top-3 right-3 text-white hover:scale-110 transition">
                             <svg class="w-6 h-6 fill-current" viewBox="0 0 32 32">
                                 <path
-                                    d="M16 28c7-4.73 14-10 14-17a6.98 6.98 0 0 0-7-7c-1.8 0-3.58.68-4.95 2.05L16 8.1l-2.05-2.05a6.98 6.98 0 0 0-9.9 0A6.98 6.98 0 0 0 2 11c0 7 7 12.27 14 17z">
-                                </path>
+                                    d="M16 28c7-4.73 14-10 14-17a6.98 6.98 0 0 0-7-7c-1.8 0-3.58.68-4.95 2.05L16 8.1l-2.05-2.05a6.98 6.98 0 0 0-9.9 0A6.98 6.98 0 0 0 2 11c0 7 7 12.27 14 17z" />
                             </svg>
                         </button>
                     </div>
@@ -251,11 +371,12 @@
                     <div class="relative mb-3">
                         <img src="./images/cottage.webp" alt="Farm stay in Kullapalayam"
                             class="w-full h-[230px] object-cover rounded-xl">
-                        <button class="absolute top-3 right-3 text-white hover:scale-110 transition">
+                        <button
+                            onclick="toggleFav(this, 'Farm stay in Kullapalayam', '₹3,310', '4.77', './images/cottage.webp')"
+                            class="absolute top-3 right-3 text-white hover:scale-110 transition">
                             <svg class="w-6 h-6 fill-current" viewBox="0 0 32 32">
                                 <path
-                                    d="M16 28c7-4.73 14-10 14-17a6.98 6.98 0 0 0-7-7c-1.8 0-3.58.68-4.95 2.05L16 8.1l-2.05-2.05a6.98 6.98 0 0 0-9.9 0A6.98 6.98 0 0 0 2 11c0 7 7 12.27 14 17z">
-                                </path>
+                                    d="M16 28c7-4.73 14-10 14-17a6.98 6.98 0 0 0-7-7c-1.8 0-3.58.68-4.95 2.05L16 8.1l-2.05-2.05a6.98 6.98 0 0 0-9.9 0A6.98 6.98 0 0 0 2 11c0 7 7 12.27 14 17z" />
                             </svg>
                         </button>
                     </div>
@@ -277,11 +398,12 @@
                         <button class="absolute top-3 left-3 px-3 py-1 bg-white rounded-full text-xs font-semibold">
                             Guest favourite
                         </button>
-                        <button class="absolute top-3 right-3 text-white hover:scale-110 transition">
+                        <button
+                            onclick="toggleFav(this, 'Cottage in Puducherry', '₹3,368', '5.0', './images/farm stay.webp')"
+                            class="absolute top-3 right-3 text-white hover:scale-110 transition">
                             <svg class="w-6 h-6 fill-current" viewBox="0 0 32 32">
                                 <path
-                                    d="M16 28c7-4.73 14-10 14-17a6.98 6.98 0 0 0-7-7c-1.8 0-3.58.68-4.95 2.05L16 8.1l-2.05-2.05a6.98 6.98 0 0 0-9.9 0A6.98 6.98 0 0 0 2 11c0 7 7 12.27 14 17z">
-                                </path>
+                                    d="M16 28c7-4.73 14-10 14-17a6.98 6.98 0 0 0-7-7c-1.8 0-3.58.68-4.95 2.05L16 8.1l-2.05-2.05a6.98 6.98 0 0 0-9.9 0A6.98 6.98 0 0 0 2 11c0 7 7 12.27 14 17z" />
                             </svg>
                         </button>
                     </div>
@@ -303,11 +425,12 @@
                         <button class="absolute top-3 left-3 px-3 py-1 bg-white rounded-full text-xs font-semibold">
                             Guest favourite
                         </button>
-                        <button class="absolute top-3 right-3 text-white hover:scale-110 transition">
+                        <button
+                            onclick="toggleFav(this, 'Farm stay in Auroville', '₹2,283', '4.92', './images/apartmentpondy.avif')"
+                            class="absolute top-3 right-3 text-white hover:scale-110 transition">
                             <svg class="w-6 h-6 fill-current" viewBox="0 0 32 32">
                                 <path
-                                    d="M16 28c7-4.73 14-10 14-17a6.98 6.98 0 0 0-7-7c-1.8 0-3.58.68-4.95 2.05L16 8.1l-2.05-2.05a6.98 6.98 0 0 0-9.9 0A6.98 6.98 0 0 0 2 11c0 7 7 12.27 14 17z">
-                                </path>
+                                    d="M16 28c7-4.73 14-10 14-17a6.98 6.98 0 0 0-7-7c-1.8 0-3.58.68-4.95 2.05L16 8.1l-2.05-2.05a6.98 6.98 0 0 0-9.9 0A6.98 6.98 0 0 0 2 11c0 7 7 12.27 14 17z" />
                             </svg>
                         </button>
                     </div>
@@ -326,11 +449,12 @@
                     <div class="relative mb-3">
                         <img src="./images/homeinpondy.avif" alt="Home in Puducherry"
                             class="w-full h-[230px] object-cover rounded-xl">
-                        <button class="absolute top-3 right-3 text-white hover:scale-110 transition">
+                        <button
+                            onclick="toggleFav(this, 'Home in Puducherry 2', '₹4,999', 'N/A', './images/homeinpondy.avif')"
+                            class="absolute top-3 right-3 text-white hover:scale-110 transition">
                             <svg class="w-6 h-6 fill-current" viewBox="0 0 32 32">
                                 <path
-                                    d="M16 28c7-4.73 14-10 14-17a6.98 6.98 0 0 0-7-7c-1.8 0-3.58.68-4.95 2.05L16 8.1l-2.05-2.05a6.98 6.98 0 0 0-9.9 0A6.98 6.98 0 0 0 2 11c0 7 7 12.27 14 17z">
-                                </path>
+                                    d="M16 28c7-4.73 14-10 14-17a6.98 6.98 0 0 0-7-7c-1.8 0-3.58.68-4.95 2.05L16 8.1l-2.05-2.05a6.98 6.98 0 0 0-9.9 0A6.98 6.98 0 0 0 2 11c0 7 7 12.27 14 17z" />
                             </svg>
                         </button>
                     </div>
@@ -346,11 +470,12 @@
                     <div class="relative mb-3">
                         <img src="./images/apartmentpondy.avif" alt="Apartment in Puducherry"
                             class="w-full h-[230px] object-cover rounded-xl">
-                        <button class="absolute top-3 right-3 text-white hover:scale-110 transition">
+                        <button
+                            onclick="toggleFav(this, 'Apartment in Puducherry', '₹2,166', '4.74', './images/apartmentpondy.avif')"
+                            class="absolute top-3 right-3 text-white hover:scale-110 transition">
                             <svg class="w-6 h-6 fill-current" viewBox="0 0 32 32">
                                 <path
-                                    d="M16 28c7-4.73 14-10 14-17a6.98 6.98 0 0 0-7-7c-1.8 0-3.58.68-4.95 2.05L16 8.1l-2.05-2.05a6.98 6.98 0 0 0-9.9 0A6.98 6.98 0 0 0 2 11c0 7 7 12.27 14 17z">
-                                </path>
+                                    d="M16 28c7-4.73 14-10 14-17a6.98 6.98 0 0 0-7-7c-1.8 0-3.58.68-4.95 2.05L16 8.1l-2.05-2.05a6.98 6.98 0 0 0-9.9 0A6.98 6.98 0 0 0 2 11c0 7 7 12.27 14 17z" />
                             </svg>
                         </button>
                     </div>
@@ -369,11 +494,12 @@
                     <div class="relative mb-3">
                         <img src="./images/img1.avif" alt="Room in Kullapalayam"
                             class="w-full h-[230px] object-cover rounded-xl">
-                        <button class="absolute top-3 right-3 text-white hover:scale-110 transition">
+                        <button
+                            onclick="toggleFav(this, 'Room in Kullapalayam', '₹2,460', '4.69', './images/img1.avif')"
+                            class="absolute top-3 right-3 text-white hover:scale-110 transition">
                             <svg class="w-6 h-6 fill-current" viewBox="0 0 32 32">
                                 <path
-                                    d="M16 28c7-4.73 14-10 14-17a6.98 6.98 0 0 0-7-7c-1.8 0-3.58.68-4.95 2.05L16 8.1l-2.05-2.05a6.98 6.98 0 0 0-9.9 0A6.98 6.98 0 0 0 2 11c0 7 7 12.27 14 17z">
-                                </path>
+                                    d="M16 28c7-4.73 14-10 14-17a6.98 6.98 0 0 0-7-7c-1.8 0-3.58.68-4.95 2.05L16 8.1l-2.05-2.05a6.98 6.98 0 0 0-9.9 0A6.98 6.98 0 0 0 2 11c0 7 7 12.27 14 17z" />
                             </svg>
                         </button>
                     </div>
